@@ -1,0 +1,65 @@
+<md-dialog>
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{Namefunction}} User Information</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content"  >
+        
+      <md-input-container class="md-block">
+        <label>Name</label>
+        <input ng-model="user.name" name="name" type="text"  required>
+          <div ng-messages="user.name.$error" >
+              <div ng-message="required">
+                UserName Require Please enter...
+              </div>
+          </div>
+      </md-input-container><br>
+          
+    <md-input-container class="md-block">
+        <label>Age</label>
+        <input ng-model="user.age" type="number" required>
+        <div ng-messages="user.age.$error"  >
+          <div ng-message="required">
+            UserAge Require Please enter...
+          </div>
+        </div>
+      </md-input-container><br>
+          
+    <md-input-container class="md-block">
+        <label>Email</label>
+        <input ng-model="user.email" type="email" required>
+        <div ng-messages="user.email.$error"  >
+          <div ng-message="required">
+            UserAge Require Please enter...
+          </div>
+        </div>
+      </md-input-container><br>
+          
+    <md-input-container class="md-block">
+        <label>Contact Number</label>
+        <input ng-model="user.contactNumber" type="number" required>
+        <div ng-messages="user.contactNumber.$error"  >
+          <div ng-message="required">
+            UserAge Require Please enter...
+          </div>
+        </div>
+      </md-input-container>      
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="save(user)">
+       Save
+      </md-button>
+      <md-button ng-click="cancel()">
+       Cancel
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

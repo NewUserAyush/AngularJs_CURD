@@ -1,0 +1,128 @@
+<html >
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    
+    <style>
+  
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+      
+        .md-dialog-content {
+          width: 1000px;
+            height:1000px;
+        }
+						        
+    </style>
+    
+</head>
+<body ng-app="app" ng-controller="CURDrepoCtrl">
+
+<md-subheader class="md-primary " style="text-align:center"><h1>CURD Angular</h1></md-subheader>
+ <md-divider ></md-divider>
+    
+   <div hide-xs>
+    <div layout="row" layout-padding>
+        <div flex-offset="15" flex="50" class="md-display-1">All User Information</div>
+        <div flex class="md-display-1"><md-button class="md-accent md-raised md-hue-1" ng-click="showAdvanced('Add')">Add</md-button></div>
+    </div>
+     <md-divider ></md-divider>
+    
+   <div layout-padding >
+    <table >
+        <thead>
+          <tr style="background-color: lightseagreen;color:white">
+            <th>UserId</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Contact Number</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+          </thead>
+    <tbody>  
+    <tr ng-repeat="data in Data " style="text-align:center">
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.age}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.contactNumber}}</td>
+            <td><md-button class="md-accent md-raised md-hue-1" ng-click="showAdvanced('update',data)">Update</md-button></td>
+            <td><md-button class="md-accent md-raised md-hue-1" ng-click="DeleteUser($index)">Delete</md-button></td>
+          </tr>
+        </tbody>  
+        </table>
+    
+    </div>
+</div>  
+    
+<div hide-lg hide-gt-sm hide-sm>
+    <div layout="row" layout-padding>
+        <div flex-offset="15" flex="50" class="md-subhead" style="margin-top: 10px;">All User Information</div>
+        <div flex ><md-button class="md-accent md-raised md-hue-1" ng-click="showAdvanced('Add')">Add</md-button></div>
+    </div>
+     <md-divider ></md-divider>
+    
+   <div layout-padding >
+        <div layout="column" ng-repeat="data in Data" style="border: 1px solid #dddddd;padding: 8px;">
+            <div layout="row" >
+                <div  flex style="background-color: lightseagreen;color:white;text-align:center" class="md-title">UserId</div><div flex-offset="5" flex>{{data.id}}</div>
+            </div>
+            <md-divider ></md-divider>
+            <div layout="row" >
+                <div  flex style="background-color: lightseagreen;color:white;text-align:center" class="md-title">Name</div>
+                <div flex-offset="5" flex>{{data.name}}</div>
+            </div>
+            <md-divider ></md-divider>
+            <div layout="row" >
+                <div flex style="background-color: lightseagreen;color:white;text-align:center" class="md-title">Age</div>
+                <div flex-offset="5" flex>{{data.age}}</div>
+            </div>
+            <md-divider ></md-divider>
+            <div layout="row" >
+                <div flex style="background-color: lightseagreen;color:white;text-align:center" class="md-title">Email</div>
+                <div flex-offset="5" flex>{{data.email}}</div>
+            </div>
+            <md-divider ></md-divider>
+            <div layout="row" >
+                <div flex style="background-color: lightseagreen;color:white;text-align:center" class="md-title">Contact</div>
+                <div flex-offset="5" flex>{{data.contactNumber}}</div>
+            </div>
+            <md-divider ></md-divider>
+            <div layout="row" >
+                <div flex style="background-color: lightseagreen;color:white;text-align:center" class="md-title">Update</div>
+                <div flex-offset="5" flex><md-button class="md-accent md-raised md-hue-1" ng-click="showAdvanced('update',data)">Update</md-button></div></div>
+            <md-divider ></md-divider>
+            <div layout="row" >
+                <div flex style="background-color: lightseagreen;color:white;text-align:center" class="md-title">Delete</div>
+                <div flex-offset="5" flex><md-button class="md-accent md-raised md-hue-1" ng-click="DeleteUser($index)">Delete</md-button></div></div>
+            <md-divider ></md-divider>
+            
+        </div>
+    </div>
+</div>      
+    
+    
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
