@@ -1,5 +1,3 @@
-# Firebase: Build a Real Time Web Chat App Codelab - Start code
+# Angularjs_CRUD_operations - 
 
-This folder contains the starting code for the [Firebase: Build a Real Time Web Chat App Codelab](https://codelabs.developers.google.com/codelabs/firebase-web/).
-
-If you'd like to jump directly to the end and see the finished code head to the [web](../web) directory.
+This application based on JSON in angularjs with CRUD operations Which shows information in reponsive tabular format. If you want to see online demo for this application plaese visit with following online link; https://angularcurd.firebaseapp.com/.
